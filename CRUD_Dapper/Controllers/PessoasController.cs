@@ -46,7 +46,7 @@ namespace CRUD_Dapper.Controllers
 
                 try
                 {
-                    string insersaoQuery = "INSERT INTO pessoas(nome, idade, peso) VALUES (@Nome, @Idade, @Peso)";
+                    string insersaoQuery = "INSERT INTO pessoas(nome, telefone, cpf, cep, endereco, bairro, cidade, estado) VALUES (@Nome, @Telefone, @CPF, @CEP, @Endereco, @Bairro, @Cidade, @Estado)";
                     con = new NpgsqlConnection(ConnectionString);
                     con.Open();
                     con.Execute(insersaoQuery, pessoas);
@@ -96,7 +96,7 @@ namespace CRUD_Dapper.Controllers
                 try
                 {
                     con = new NpgsqlConnection(ConnectionString);
-                    string atualizarQuery = "UPDATE pessoas SET Nome=@Nome, Idade=@Idade, Peso=@Peso WHERE PessoaId=@PessoaId";
+                    string atualizarQuery = "UPDATE pessoas SET Nome=@Nome, Telefone=@Telefone, CPF=@CPF, CEP=@CEP, Endereco=@Endereco, Bairro=@Bairro, Cidade=@Cidade, Estado=@Estado WHERE PessoaId=@PessoaId";
                     con.Open();
                     con.Execute(atualizarQuery, pessoas);
                     con.Close();

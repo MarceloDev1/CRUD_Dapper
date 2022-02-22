@@ -17,10 +17,25 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Idade)
+                @Html.DisplayNameFor(model => model.Telefone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Peso)
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CEP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
             </th>
             <th></th>
         </tr>
@@ -28,26 +43,41 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PessoaId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Idade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Peso)
-                </td>
-                <td>
-                    <a asp-controller="Pessoas" asp-action="Edit" asp-route-pessoasid="@item.PessoaId" class="btn btn-outline-info btn-sm">Atualizar</a>&emsp;
-                    <form asp-controller="Pessoas" asp-action="Delete" asp-route-pessoaid="@item.PessoaId" onclick="confirm('Prosseguir com a exlusão do usuário @item.Nome?')">
-                        <button type="submit" class="btn btn-outline-danger btn-sm">Excluir</button>
-                    </form>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PessoaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CEP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                <a asp-controller="Pessoas" asp-action="Edit" asp-route-pessoasid="@item.PessoaId" class="btn btn-outline-info btn-sm">Atualizar</a>&emsp;
+                <form asp-controller="Pessoas" asp-action="Delete" asp-route-pessoaid="@item.PessoaId" onclick="confirm('Prosseguir com a exlusão do usuário @item.Nome?')">
+                    <button type="submit" class="btn btn-outline-danger btn-sm">Excluir</button>
+                </form>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
